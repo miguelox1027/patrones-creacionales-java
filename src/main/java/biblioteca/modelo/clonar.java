@@ -1,4 +1,4 @@
-package org.example;
+package biblioteca.modelo;
 
 public interface clonar {
     int num1();

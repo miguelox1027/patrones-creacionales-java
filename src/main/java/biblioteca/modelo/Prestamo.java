@@ -4,8 +4,9 @@ public class Prestamo {
 
     private Libro libro;
     private Usuario usuario;
-    private int diasPermitidos;   // días que se puede tener el libro
-    private int diasUsados;       // días que realmente lo tuvo (0 mientras no lo devuelva)
+    private int diasPermitidos;
+    private int diasUsados;
+    private boolean devuelto;
 
     public Prestamo(Libro libro, Usuario usuario, int diasPermitidos) {
         this.libro = libro;
@@ -15,9 +16,9 @@ public class Prestamo {
 
     public void registrarDevolucion(int diasUsados) {
         this.diasUsados = diasUsados;
+        this.devuelto = true;
     }
 
-    // Multa = días de retraso x (valor base x porcentaje de multa / 100)
     public double calcularMulta() {
         int diasRetraso = diasUsados - diasPermitidos;
         if (diasRetraso <= 0) {
@@ -32,4 +33,5 @@ public class Prestamo {
     public Usuario getUsuario() { return usuario; }
     public int getDiasPermitidos() { return diasPermitidos; }
     public int getDiasUsados() { return diasUsados; }
+    public boolean isDevuelto() { return devuelto; }
 }

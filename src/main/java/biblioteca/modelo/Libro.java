@@ -2,13 +2,13 @@ package biblioteca.modelo;
 
 public class Libro implements Copiable {
 
-    // Obligatorios
+    // obligatorios
     private String codigo;
     private String titulo;
     private String autor;
     private String categoria;
     private EstadoLibro estado;
-    // Opcionales
+    // opcionales
     private String editorial;
     private Integer anioPublicacion;
 
